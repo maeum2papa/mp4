@@ -3,6 +3,7 @@ package kr.teammeta.mp4.controller;
 
 import kr.teammeta.mp4.service.VideoService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

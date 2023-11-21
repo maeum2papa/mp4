@@ -1,5 +1,6 @@
 package kr.teammeta.mp4.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.util.concurrent.CompletableFuture;
 
+@Slf4j
 @Service
 public class VideoService {
 
@@ -22,6 +24,9 @@ public class VideoService {
 
         // 동영상 파일 경로 설정 및 로직
         String videoPath = this.videoPath + filename;
+
+        log.info("{} 시청 시작",videoPath);
+
         File videoFile = new File(videoPath);
 
         HttpHeaders headers = new HttpHeaders();

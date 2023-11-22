@@ -1,2 +1,4 @@
 video :
     path : ./video/
+logging:
+  charset: UTF-8

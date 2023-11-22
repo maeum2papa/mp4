@@ -25,7 +25,7 @@ public class VideoService {
         // 동영상 파일 경로 설정 및 로직
         String videoPath = this.videoPath + filename;
 
-        log.info("{} 시청 시작",videoPath);
+        log.info("{} 시청",videoPath);
 
         File videoFile = new File(videoPath);
 

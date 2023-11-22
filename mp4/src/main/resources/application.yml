@@ -1,2 +1,2 @@
 video :
-    path : /home/video/
+    path : ./video/

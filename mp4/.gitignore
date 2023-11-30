@@ -37,7 +37,7 @@ out/
 .vscode/
 
 ### video dir ###
-.video/
+video/
 
 ### ssl ###
-.ssl/
+ssl/

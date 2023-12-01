@@ -22,11 +22,24 @@ public class VideoController {
 
     @GetMapping("/{filename}")
     public CompletableFuture<ResponseEntity<FileSystemResource>> streamVideo(@PathVariable String filename, HttpServletRequest request) {
+
         String referer = request.getHeader("referer");
 
-        if(!referer.equals("https://collaborland.kr/")){
+        if(referer==null){
+            log.error("referer가 없는 접근 입니다.");
+            throw new NullPointerException();
+        }
+
+        log.info("referer : {}",referer);
+
+        if(referer.equals("https://v1.collaborland.kr/")) {
             log.error("잘못된 접근 = {}",referer);
-            throw new RuntimeException("잘못된 접근 입니다.");
+            throw new RuntimeException();
+        }
+
+        if(!referer.contains("collaborland.kr")){
+            log.error("잘못된 접근 = {}",referer);
+            throw new RuntimeException();
         }
 
         return videoService.streamVideoAsync(filename);

@@ -21,4 +21,10 @@ public class VideoException {
 
         log.error("{}를 찾을 수 없습니다.",message);
     }
+
+
+    @ExceptionHandler({RuntimeException.class})
+    public void VideoException(RuntimeException e){
+        log.error("허용되지 않은 접근 입니다.");
+    }
 }
